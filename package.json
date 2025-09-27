@@ -1,6 +1,6 @@
 {
   "name": "sapcommerce-sbom-gen",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Generate SBOM files for SAP Commerce Cloud solutions",
   "main": "index.js",
   "type": "module",
