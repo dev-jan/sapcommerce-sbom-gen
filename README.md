@@ -7,6 +7,7 @@ This tool aim to easily create an SBOM (Software Bill of Material) of an SAP Com
 Try it using npx:
 
 ```bash
+cd <to-your-sap-commerce-repo>
 npx sapcommerce-sbom-gen .
 ```
 
@@ -34,6 +35,9 @@ sbom:
           -F "projectName=example" \
           -F "projectVersion=$CI_COMMIT_BRANCH" \
           -F "bom=@sbom.json"
+  artifacts:
+    paths:
+      - sbom.json
 ```
 
 ## Why is this needed? 🤔
@@ -46,3 +50,13 @@ on top some NPM dependencies (and maybe even more?). For this reason, this tool 
 This project is not assosiated with SAP in any way and NOT an official product. Just an approach to create SBOMs. Please be aware that the resulting SBOM is maybe not containing really all dependencies if some strange edge cases are not implemented here. Be sure to manually check the SBOM.
 
 Something missing? Something wrong? Feel free to create an Issue or a Pull Request to fix it 😇
+
+## Need help?
+
+First, check the available command line options:
+
+```bash
+npx sapcommerce-sbom-gen --help
+```
+
+Also always read the output. To see more info, use the `--verbose` parameter to increase verbosity.
