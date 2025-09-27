@@ -5,11 +5,13 @@ This tool aim to easily create an SBOM (Software Bill of Material) of an SAP Com
 ## How to use it? 💻️
 
 Try it using npx:
+
 ```bash
 npx sapcommerce-sbom-gen .
 ```
 
 You can also use the docker image:
+
 ```bash
 cd <to-your-sap-commerce-repo>
 docker run --rm -v $(pwd):/source devjanofficial/sapcommerce-sbom-gen sapcommerce-sbom-gen .
