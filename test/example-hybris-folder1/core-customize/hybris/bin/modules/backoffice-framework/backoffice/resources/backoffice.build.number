@@ -1,0 +1,10 @@
+#Ant properties
+builddate=209999999 0900
+description=backoffice
+group.id=de.hybris.backoffice
+module.name=backoffice-module
+name=backoffice
+releasedate=209999999 0900
+vendor=hybris
+version=2211.42
+version.api=2211

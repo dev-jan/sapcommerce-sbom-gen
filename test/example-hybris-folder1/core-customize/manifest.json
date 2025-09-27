@@ -1,0 +1,20 @@
+{
+  "commerceSuiteVersion": "2211.42",
+  "solrVersion": "9.7",
+  "enableImageProcessingService": true,
+  "extensionPacks": [
+    {
+      "name": "hybris-commerce-integrations",
+      "version": "2211.37"
+    }
+  ],
+  "extensions": ["cloudmediaconversion", "mediaconversionbackoffice", "azurecloudhotfolder"],
+  "useConfig": {
+    "extensions": {
+      "location": "localextensions.xml"
+    },
+    "solr": {
+      "location": "/solr"
+    }
+  }
+}

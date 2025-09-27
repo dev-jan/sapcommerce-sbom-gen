@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+
+  <extension name="backoffice" usemaven="true">
+    <requires-extension name="ldap" />
+
+    <webmodule
+      jspcompile="false"
+      webroot="/foo" />
+
+  </extension>
+</extensioninfo>

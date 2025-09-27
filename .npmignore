@@ -1,0 +1,12 @@
+.git/
+test/
+coverage/
+.dockerignore
+.editorconfig
+.prettierignore
+.prettierrc
+Dockerfile
+eslint.config.js
+starter.sh
+tsconfig.json
+src/

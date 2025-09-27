@@ -1,0 +1,50 @@
+{
+  "name": "sapcommerce-sbom-gen",
+  "version": "0.0.2",
+  "description": "Generate SBOM files for SAP Commerce Cloud solutions",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "sapcommerce-sbom-gen": "./dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist",
+    "clean": "rm -rf dist tmp && mkdir -p tmp",
+    "execute": "node dist/src/cli --help",
+    "execute:fake": "node dist/src/cli --verbose --output ./tmp/fake-hybris-sbom.json ./test/example-hybris-folder1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "npm run lint:format && npm run lint:eslint",
+    "lint:format": "prettier . --check",
+    "lint:eslint": "eslint .",
+    "prettier:fix": "prettier . --write"
+  },
+  "author": "Jan Bucher",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.1",
+    "fast-xml-parser": "^5.2.5",
+    "properties-reader": "^2.3.0",
+    "uuid": "^13.0.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.5.2",
+    "@types/properties-reader": "^2.1.3",
+    "@types/semver": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0",
+    "jsonschema": "^1.5.0",
+    "prettier": "3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
+    "vitest": "^3.2.4"
+  }
+}
