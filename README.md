@@ -29,11 +29,13 @@ sbom:
   script:
     - sapcommerce-sbom-gen --output ./sbom.json .
     - |
-      curl -X POST https://$DEPENDENCYTRACK_URL/api/v1/bom \
-          -H 'Content-Type: multipart/form-data' \
-          -H 'X-Api-Key: $DEPENDENCYTRACK_APIKEY' \
+      set -xv
+      curl --fail-with-body -X POST https://$DEPENDENCYTRACK_URL/api/v1/bom \
+          -H "Content-Type: multipart/form-data" \
+          -H "X-Api-Key: $DEPENDENCYTRACK_APIKEY" \
           -F "projectName=example" \
           -F "projectVersion=$CI_COMMIT_BRANCH" \
+          -F "autoCreate=true" \
           -F "bom=@sbom.json"
   artifacts:
     paths:
