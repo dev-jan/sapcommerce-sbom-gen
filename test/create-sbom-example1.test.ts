@@ -3,7 +3,7 @@ import { createSbom } from '../src/create-sbom.js';
 import * as fs from 'fs';
 import { expect, test } from 'vitest';
 import { Validator } from 'jsonschema';
-import cyclonDxSchema_1_6 from './schemas/bom-1.6.schema.json' with { type: 'json' };
+import cyclonDxSchema_1_7 from './schemas/bom-1.7.schema.json' with { type: 'json' };
 import jsfSchema_0_82 from './schemas/jsf-0.82.schema.json' with { type: 'json' };
 
 test('create-sbom-example1', () => {
@@ -28,9 +28,9 @@ test('create-sbom-example1', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   v.addSchema(jsfSchema_0_82 as any, 'http://cyclonedx.org/schema/jsf-0.82.schema.json');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const validationResult = v.validate(sbomObject, cyclonDxSchema_1_6 as any, { nestedErrors: true });
+  const validationResult = v.validate(sbomObject, cyclonDxSchema_1_7 as any, { nestedErrors: true });
   if (!validationResult.valid) {
     console.log('Validation errors:', validationResult.errors);
   }
-  expect(validationResult.valid, 'SBOM does not conform to CycloneDX 1.6 schema').toBe(true);
+  expect(validationResult.valid, 'SBOM does not conform to CycloneDX 1.7 schema').toBe(true);
 });
