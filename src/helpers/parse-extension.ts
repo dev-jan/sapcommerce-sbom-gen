@@ -21,7 +21,7 @@ export function parseExtension(
   const buildNumberPath = `${fullPath}/resources/${extName}.build.number`;
   let version = '0.0.0';
   if (fs.existsSync(buildNumberPath)) {
-    const extProps = PropertiesReader(buildNumberPath);
+    const extProps = PropertiesReader({ sourceFile: buildNumberPath });
     const versionFromProps = extProps.get('version') || '';
     version = versionFromProps.toString().trim();
   }
